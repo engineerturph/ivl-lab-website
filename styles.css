@@ -117,7 +117,7 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1.05fr);
+  grid-template-columns: minmax(340px, 1.04fr) minmax(0, 0.96fr);
   align-items: center;
   gap: 42px;
   width: min(var(--max), calc(100% - 40px));
@@ -145,23 +145,11 @@ p {
 
 h1 {
   margin-bottom: 20px;
-  max-width: 840px;
-  font-size: 118px;
-  line-height: 0.9;
+  max-width: 680px;
+  font-size: 74px;
+  line-height: 0.96;
   font-weight: 800;
   letter-spacing: 0;
-}
-
-.hero-logo-title {
-  max-width: 760px;
-  margin-bottom: 28px;
-  line-height: 1;
-}
-
-.hero-logo-title img {
-  display: block;
-  width: min(100%, 760px);
-  height: auto;
 }
 
 h2 {
@@ -521,7 +509,7 @@ h3 {
   }
 
   h1 {
-    font-size: 82px;
+    font-size: 58px;
   }
 
   h2 {
@@ -600,7 +588,7 @@ h3 {
   }
 
   h1 {
-    font-size: 54px;
+    font-size: 42px;
     line-height: 0.96;
   }
 
