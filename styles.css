@@ -152,6 +152,18 @@ h1 {
   letter-spacing: 0;
 }
 
+.hero-logo-title {
+  max-width: 760px;
+  margin-bottom: 28px;
+  line-height: 1;
+}
+
+.hero-logo-title img {
+  display: block;
+  width: min(100%, 760px);
+  height: auto;
+}
+
 h2 {
   margin-bottom: 18px;
   font-size: 60px;
