@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IAI Lab | Intelligent Autonomous Interfaces</title>
+    <meta
+      name="description"
+      content="IAI Lab is a robotics research website focused on dexterous manipulation, embodied AI, and autonomous robotic systems."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <canvas class="field" id="field" aria-hidden="true"></canvas>
+
+    <header class="site-header" data-reveal>
+      <a class="brand" href="#top" aria-label="IAI Lab home">
+        <img src="logo-hand.png" alt="IAI Lab robotic hand mark">
+        <span>IAI lab</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">Robotics / Embodied Intelligence / Human-Machine Systems</p>
+          <h1>IAI Lab</h1>
+          <p class="hero-text">
+            We build robotic hands, perception systems, and autonomous agents that can understand
+            physical intent, act with precision, and collaborate in human environments.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#research">Explore research</a>
+            <a class="button button-ghost" href="#contact">Start a collaboration</a>
+          </div>
+        </div>
+
+        <div class="hero-mark" data-reveal>
+          <img src="image.png" alt="IAI Lab robotic hand logo">
+          <div class="scanline" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="signal-strip" aria-label="Lab capabilities" data-reveal>
+        <div>
+          <span class="signal-value">06</span>
+          <span class="signal-label">Robotic platforms</span>
+        </div>
+        <div>
+          <span class="signal-value">24/7</span>
+          <span class="signal-label">Autonomy test loop</span>
+        </div>
+        <div>
+          <span class="signal-value">1ms</span>
+          <span class="signal-label">Control telemetry</span>
+        </div>
+        <div>
+          <span class="signal-value">3D</span>
+          <span class="signal-label">World models</span>
+        </div>
+      </section>
+
+      <section class="section" id="research">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Research Lines</p>
+          <h2>Robots that sense, reason, and handle the real world.</h2>
+        </div>
+        <div class="research-grid">
+          <article class="panel wide" data-reveal>
+            <span class="panel-index">01</span>
+            <h3>Dexterous Manipulation</h3>
+            <p>
+              Tactile control, grasp planning, and robot-hand mechanics for fragile, deformable,
+              and unfamiliar objects.
+            </p>
+          </article>
+          <article class="panel" data-reveal>
+            <span class="panel-index">02</span>
+            <h3>Embodied AI</h3>
+            <p>
+              Perception-action models that connect language, spatial reasoning, and continuous
+              control.
+            </p>
+          </article>
+          <article class="panel" data-reveal>
+            <span class="panel-index">03</span>
+            <h3>Human-Robot Interfaces</h3>
+            <p>
+              Intent-aware control surfaces for operators, clinicians, and field teams working with
+              robotic systems.
+            </p>
+          </article>
+          <article class="panel wide" data-reveal>
+            <span class="panel-index">04</span>
+            <h3>Autonomous Labs</h3>
+            <p>
+              Closed-loop experimentation where robots collect data, test hypotheses, and improve
+              their own policies.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="platforms">
+        <div class="section-heading sticky" data-reveal>
+          <p class="eyebrow">Platforms</p>
+          <h2>Designed for fast iteration from bench tests to deployment.</h2>
+          <p>
+            The lab stack combines custom end-effectors, synchronized vision, force sensing, and
+            reproducible simulation.
+          </p>
+        </div>
+        <div class="platform-list">
+          <article class="platform" data-reveal>
+            <span>HAND-01</span>
+            <h3>Anthropomorphic Robotic Hand</h3>
+            <p>Five-finger tendon actuation, tactile arrays, and high-rate joint telemetry.</p>
+          </article>
+          <article class="platform" data-reveal>
+            <span>SCENE-03</span>
+            <h3>Active Perception Rig</h3>
+            <p>Multi-camera reconstruction for manipulation, tracking, and skill evaluation.</p>
+          </article>
+          <article class="platform" data-reveal>
+            <span>SIM-OPS</span>
+            <h3>Simulation-to-Lab Pipeline</h3>
+            <p>Policy training, synthetic data generation, and repeatable benchmark scenes.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section lab-console" aria-label="Live lab console" data-reveal>
+        <div class="console-top">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="console-grid">
+          <div>
+            <p class="eyebrow">System Pulse</p>
+            <h2>Manipulation run active</h2>
+          </div>
+          <div class="telemetry">
+            <p><span>grip.force</span><strong>12.8 N</strong></p>
+            <p><span>policy.conf</span><strong>94%</strong></p>
+            <p><span>pose.error</span><strong>0.7 mm</strong></p>
+            <p><span>latency</span><strong>8 ms</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="publications">
+        <div class="section-heading compact" data-reveal>
+          <p class="eyebrow">Publications & News</p>
+          <h2>Recent signals from the lab.</h2>
+        </div>
+        <div class="news-list">
+          <a class="news-item" href="#" data-reveal>
+            <time datetime="2026-05-12">May 12, 2026</time>
+            <span>Learning tactile recovery policies for compliant manipulation.</span>
+          </a>
+          <a class="news-item" href="#" data-reveal>
+            <time datetime="2026-04-03">Apr 3, 2026</time>
+            <span>IAI Lab releases a benchmark for hand-object intent prediction.</span>
+          </a>
+          <a class="news-item" href="#" data-reveal>
+            <time datetime="2026-02-19">Feb 19, 2026</time>
+            <span>New collaboration on assistive robotics and shared autonomy.</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div data-reveal>
+          <p class="eyebrow">Join the Work</p>
+          <h2>Bring a hard robotics problem.</h2>
+          <p>
+            We collaborate with researchers, companies, and students working on embodied AI,
+            robotic manipulation, perception, and autonomous experimental systems.
+          </p>
+        </div>
+        <a class="button button-primary" href="mailto:hello@iailab.example">hello@iailab.example</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>IAI lab</span>
+      <span>Intelligent Autonomous Interfaces</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
