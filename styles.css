@@ -1,9 +1,9 @@
 :root {
   --ink: #050505;
-  --paper: #f7f7f4;
+  --paper: #ffffff;
   --muted: #686a6d;
   --line: rgba(5, 5, 5, 0.14);
-  --panel: rgba(255, 255, 255, 0.74);
+  --panel: #ffffff;
   --accent: #1a1a1a;
   --steel-accent: #737b82;
   --steel: #9aa1a8;
@@ -22,23 +22,22 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background:
-    linear-gradient(rgba(5, 5, 5, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(5, 5, 5, 0.035) 1px, transparent 1px),
-    var(--paper);
-  background-size: 48px 48px;
+  background: var(--paper);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-body::before {
+.intro-logo {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
   pointer-events: none;
-  content: "";
-  background:
-    radial-gradient(circle at 25% 10%, rgba(5, 5, 5, 0.06), transparent 26rem),
-    radial-gradient(circle at 90% 70%, rgba(115, 123, 130, 0.08), transparent 24rem);
+  background: #ffffff url("image.png") center / min(76vw, 720px) auto no-repeat;
+  opacity: 0.5;
+  transition: opacity 900ms ease;
+}
+
+body.intro-pending .intro-logo {
+  opacity: 1;
 }
 
 a {
@@ -46,12 +45,11 @@ a {
   text-decoration: none;
 }
 
-.field {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.55;
+.site-header,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .site-header {
@@ -71,23 +69,25 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 0;
   min-width: 0;
-  max-width: 320px;
+  width: 150px;
+  height: 58px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
 
-.brand span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.brand-logo {
+  display: block;
+  width: 150px;
+  height: 58px;
 }
 
-.brand img {
-  width: 52px;
-  height: 52px;
+.brand-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -117,9 +117,8 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(340px, 1.04fr) minmax(0, 0.96fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  gap: 42px;
   width: min(var(--max), calc(100% - 40px));
   min-height: calc(100svh - 74px);
   margin: 0 auto;
@@ -215,22 +214,18 @@ h3 {
   outline-offset: 2px;
 }
 
-.hero-mark {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 1;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.62);
-  box-shadow: 0 30px 90px rgba(5, 5, 5, 0.1);
+body.intro-pending .site-header,
+body.intro-pending main,
+body.intro-pending .site-footer {
+  transform: translateY(18px);
+  opacity: 0;
+  pointer-events: none;
 }
 
-.hero-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  mix-blend-mode: multiply;
-  filter: contrast(1.08);
+.site-header,
+main,
+.site-footer {
+  transition: transform 820ms ease, opacity 820ms ease;
 }
 
 .signal-strip {
@@ -533,11 +528,6 @@ h3 {
     padding-top: 42px;
   }
 
-  .hero-mark {
-    max-width: 620px;
-    margin: 0 auto;
-  }
-
   .sticky {
     position: static;
   }
@@ -566,13 +556,10 @@ h3 {
     gap: 12px;
   }
 
-  .brand span {
-    display: none;
-  }
-
-  .brand img {
-    width: 44px;
-    height: 44px;
+  .brand,
+  .brand-logo {
+    width: 118px;
+    height: 50px;
   }
 
   .nav {
