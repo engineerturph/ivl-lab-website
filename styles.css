@@ -217,55 +217,12 @@ h3 {
   box-shadow: 0 30px 90px rgba(5, 5, 5, 0.1);
 }
 
-.hero-mark::before,
-.hero-mark::after {
-  position: absolute;
-  inset: 22px;
-  content: "";
-  border: 1px solid rgba(5, 5, 5, 0.1);
-  pointer-events: none;
-}
-
-.hero-mark::after {
-  inset: auto 30px 30px auto;
-  width: 34%;
-  aspect-ratio: 1;
-  border-color: rgba(5, 5, 5, 0.28);
-}
-
 .hero-mark img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   mix-blend-mode: multiply;
   filter: contrast(1.08);
-}
-
-.scanline {
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 18%;
-  height: 2px;
-  background: var(--accent);
-  box-shadow: 0 0 30px rgba(5, 5, 5, 0.42);
-  animation: scan 4s ease-in-out infinite;
-}
-
-@keyframes scan {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.15;
-  }
-  45%,
-  55% {
-    opacity: 0.85;
-  }
-  70% {
-    transform: translateY(420%);
-    opacity: 0.28;
-  }
 }
 
 .signal-strip {
