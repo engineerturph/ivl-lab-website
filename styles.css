@@ -42,7 +42,7 @@ body.intro-pending .intro-logo {
 
 body.bg-no-hand .intro-logo {
   background-image: url("image-text-only.png");
-  background-size: min(46vw, 440px) auto;
+  background-size: min(92vw, 880px) auto;
 }
 
 a {
