@@ -1,3 +1,32 @@
+const BG_VARIANT_KEY = "ivl-bg-variant";
+const bgImages = {
+  hand: "image.png",
+  "no-hand": "image-text-only.png",
+};
+
+function applyBgVariant(variant) {
+  document.body.classList.toggle("bg-no-hand", variant === "no-hand");
+  document.querySelectorAll(".bg-toggle-btn").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.variant === variant));
+  });
+}
+
+function getStoredBgVariant() {
+  const stored = window.localStorage.getItem(BG_VARIANT_KEY);
+  return stored === "no-hand" ? "no-hand" : "hand";
+}
+
+const initialBgVariant = getStoredBgVariant();
+applyBgVariant(initialBgVariant);
+
+document.querySelectorAll(".bg-toggle-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const variant = button.dataset.variant === "no-hand" ? "no-hand" : "hand";
+    window.localStorage.setItem(BG_VARIANT_KEY, variant);
+    applyBgVariant(variant);
+  });
+});
+
 const introDuration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 150 : 1000;
 let introTimerStarted = false;
 
@@ -28,7 +57,7 @@ document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe
 const introImage = new Image();
 introImage.onload = startIntroTimer;
 introImage.onerror = startIntroTimer;
-introImage.src = "image.png";
+introImage.src = bgImages[initialBgVariant];
 
 if (introImage.complete) {
   startIntroTimer();

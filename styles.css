@@ -33,11 +33,16 @@ body {
   pointer-events: none;
   background: #ffffff url("image.png") center / min(76vw, 720px) auto no-repeat;
   opacity: 0.5;
-  transition: opacity 900ms ease;
+  transition: opacity 900ms ease, background-image 200ms ease;
 }
 
 body.intro-pending .intro-logo {
   opacity: 1;
+}
+
+body.bg-no-hand .intro-logo {
+  background-image: url("image-text-only.png");
+  background-size: min(46vw, 440px) auto;
 }
 
 a {
@@ -91,6 +96,12 @@ main,
   object-fit: contain;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .nav {
   display: flex;
   gap: 4px;
@@ -113,6 +124,47 @@ main,
   color: var(--ink);
   background: rgba(5, 5, 5, 0.08);
   outline: none;
+}
+
+.bg-toggle {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.bg-toggle-btn {
+  padding: 8px 13px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #303236;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.bg-toggle-btn:hover {
+  color: var(--ink);
+}
+
+.bg-toggle-btn[aria-pressed="true"] {
+  color: white;
+  background: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .bg-toggle-btn {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
 }
 
 .hero {
@@ -561,6 +613,17 @@ main,
   .brand-logo {
     width: 154px;
     height: 64px;
+  }
+
+  .header-right {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .bg-toggle {
+    order: -1;
   }
 
   .nav {
